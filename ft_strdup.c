@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rvikrama <rvikrama@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/08 12:36:16 by rvikrama          #+#    #+#             */
-/*   Updated: 2024/06/08 12:36:19 by rvikrama         ###   ########.fr       */
+/*   Created: 2024/06/11 10:55:40 by rvikrama          #+#    #+#             */
+/*   Updated: 2024/06/11 10:55:43 by rvikrama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "libft.h"
-int ft_isdigit(int c)
-{
-    if (c >= 48 && c <= 57)
-        return (1);
-    else 
-        return (0); 
-}
 
-/*
-Or you can also use this
-
-int ft_isdigit(int c)
+char    *ft_strdup(const char *str)
 {
-    if (c >= '0' && c <= '9')
-        return (1);
-    else
-        return (0);
+    size_t  i;
+    size_t  size;
+    char    *copy;
+
+    size = (ft_strlen(str) + 1);
+	copy = (char *)malloc(sizeof(char) * size);
+	if (!copy)
+		return (NULL);
+	i = 0;
+	while (i < size)
+	{
+		copy[i] = str[i];
+		i++;
+	}
+	return (copy);
 }
-*/

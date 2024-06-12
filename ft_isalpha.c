@@ -15,18 +15,22 @@ int ft_isalpha(int c)
 {
     if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
         return (1);
-    else
-        return (0);
-
+    return (0);
 }
 
-_____________________________________________
+/*
+int main() {
+    char test_char;
 
-// or you can also you this//
-int ft_isalpha(int c)
-{
-    if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-        return (1);
-    else
-        return (0);
+    printf("Enter a character: ");
+    scanf("%c", &test_char);
+
+    if (ft_isalpha(test_char)) {
+        printf("%c is an alphabet character.\n", test_char);
+    } else {
+        printf("%c is not an alphabet character.\n", test_char);
+    }
+
+    return 0;
 }
+*/
