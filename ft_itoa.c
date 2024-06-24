@@ -6,11 +6,12 @@
 /*   By: rvikrama <rvikrama@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 12:36:41 by rvikrama          #+#    #+#             */
-/*   Updated: 2024/06/08 12:36:44 by rvikrama         ###   ########.fr       */
+/*   Updated: 2024/06/12 16:41:49 by rvikrama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 static char	*ft_char(char *s, unsigned int number, long int len)
 {
 	while (number > 0)

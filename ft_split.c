@@ -9,115 +9,80 @@
 /*   Updated: 2024/06/08 12:40:09 by rvikrama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
-static char	**free_array(char **ptr, int i)
+
+#include "libft.h"
+
+int	count_strings(char const *s, char c)
 {
-	while (i > 0)
+	int	i;
+	int	count;
+
+	count = 1;
+	i = 0;
+	while (s[i] != '\0')
 	{
-		i--;
-		free(ptr[i]);
+		if (s[i] == c)
+		{
+			if (s[i + 1] != c)
+				count++;
+		}
+		i++;
 	}
-	free(ptr);
-	return (0);
+	if (s[0] == c)
+		count--;
+	if (s[i - 1] == c)
+		count--;
+	return (count);
 }
 
-    static int	ft_count_words(char const *str, char c)
-    {
-	    int	i;
-	    int	count;
+int	ft_delimstrl(char const *s, char c)
+{
+	int	len;
 
-	    i = 0;
-	    count = 0;
-	    while (str[i] != '\0')
-	    {
-		    if (str[i] == c)
-			    i++;
-		    else
-		    {
-			    count++;
-			    while (str[i] && str[i] != c)
-				    i++;
-		    }
-	    }
-	    return (count);
-    }
+	len = 0;
+	while (s[len] != c && s[len] != '\0')
+		len++;
+	return (len);
+}
 
-            static char	*ft_putword(char *word, char const *s, int i, int word_len)
-            {
-	            int	j;
+void	putstr(char *dest, char const *str, int len)
+{
+	int		i;
 
-	            j = 0;
-	            while (word_len > 0)
-	            {
-		            word[j] = s[i - word_len];
-		            j++;
-		            word_len--;
-	            }
-	            word[j] = '\0';
-	            return (word);
-            }
-
-    static char	**ft_split_words(char const *s, char c, char **s2, int num_words)
-    {   
-	    int	i;
-	    int	word;
-	    int	word_len;
-
-	    i = 0;
-	    word = 0;
-	    word_len = 0;
-	    while (word < num_words)
-	    {
-		    while (s[i] && s[i] == c)
-			    i++;
-		    while (s[i] && s[i] != c)
-		    {
-			    i++;
-			    word_len++;
-		    }
-		    s2[word] = (char *)malloc(sizeof(char) * (word_len + 1));
-		    if (!s2)
-			    return (free_array(s2, word));
-		    ft_putword(s2[word], s, i, word_len);
-		    word_len = 0;
-		    word++;
-	    }
-	    s2[word] = 0;
-        return (s2);
-    }
+	i = 0;
+	while (i < len)
+	{
+		dest[i] = str[i];
+		i++;
+	}
+	dest[i] = '\0';
+}
 
 char	**ft_split(char const *s, char c)
 {
-	char			**s2;
-	unsigned int	num_words;
+	char	**str;
+	size_t	i;
+	int		j;
+	int		count;
 
+	i = 0;
+	j = 0;
 	if (!s)
-		return (0);
-	num_words = ft_count_words(s, c);
-	s2 = (char **)malloc(sizeof(char *) * (num_words + 1));
-	if (!s2)
-		return (0);
-	s2 = ft_split_words(s, c, s2, num_words);
-	return (s2);
+		return (NULL);
+	count = count_strings(s, c);
+	str = malloc (sizeof(char *) * (count + 1));
+	if (!str)
+		return (NULL);
+	while (i < ft_strlen(s) && j < count)
+	{
+		while (s[i] == c)
+			i++;
+		str[j] = (char *)malloc(sizeof(char) * (ft_delimstrl(s + i, c) + 1));
+		if (!str[j])
+			return (NULL);
+		putstr(str[j++], s + i, ft_delimstrl(s + i, c));
+		i += ft_delimstrl(s + i, c);
+	}
+	str[j] = NULL;
+	return (str);
 }
-int main()
- {
-    char const *s = "Hello World! This is a test string.";
-    char c = ' ';
-    char **words = ft_split(s, c);
-
-    if (words) {
-        // Print each word
-        for (int i = 0; words[i] != NULL; i++) {
-            printf("%s\n", words[i]);
-        }
-
-        // Free the memory allocated for the array of words
-        free_array(words, ft_count_words(s, c));
-    } else {
-        printf("Failed to split the string.\n");
-    }
-
-    return 0;
-}
-*/

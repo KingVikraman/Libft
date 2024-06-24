@@ -6,11 +6,12 @@
 /*   By: rvikrama <rvikrama@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 12:36:29 by rvikrama          #+#    #+#             */
-/*   Updated: 2024/06/08 12:36:32 by rvikrama         ###   ########.fr       */
+/*   Updated: 2024/06/12 16:41:10 by rvikrama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 int	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)

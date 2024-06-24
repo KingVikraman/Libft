@@ -6,11 +6,12 @@
 /*   By: rvikrama <rvikrama@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 12:51:26 by rvikrama          #+#    #+#             */
-/*   Updated: 2024/06/08 12:51:27 by rvikrama         ###   ########.fr       */
+/*   Updated: 2024/06/12 17:08:09 by rvikrama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*new;

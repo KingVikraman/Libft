@@ -6,11 +6,12 @@
 /*   By: rvikrama <rvikrama@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 12:37:14 by rvikrama          #+#    #+#             */
-/*   Updated: 2024/06/08 12:37:15 by rvikrama         ###   ########.fr       */
+/*   Updated: 2024/06/12 16:44:29 by rvikrama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t	i;
@@ -27,4 +28,4 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		}
 	}
 	return (dest);
-} 
+}

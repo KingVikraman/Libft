@@ -6,11 +6,12 @@
 /*   By: rvikrama <rvikrama@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 12:37:59 by rvikrama          #+#    #+#             */
-/*   Updated: 2024/06/08 12:38:01 by rvikrama         ###   ########.fr       */
+/*   Updated: 2024/06/12 16:44:57 by rvikrama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	size_t			i;

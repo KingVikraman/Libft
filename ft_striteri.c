@@ -6,12 +6,13 @@
 /*   By: rvikrama <rvikrama@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 12:51:16 by rvikrama          #+#    #+#             */
-/*   Updated: 2024/06/08 12:51:18 by rvikrama         ###   ########.fr       */
+/*   Updated: 2024/06/12 17:07:31 by rvikrama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-void	ft_striteri(char *s, void (*f)(unsigned int,char*))
+
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	int	i;
 
