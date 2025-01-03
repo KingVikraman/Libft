@@ -1,2 +1,2 @@
 # Libft
-Progress of Libft
+The libft project at 42 involves creating your own C standard library. You'll implement various functions from the standard library, like string manipulation, memory management, and conversion functions. The goal is to deepen your understanding of how these functions work under the hood and how memory is managed in C. You'll also create a Makefile to compile your library, which you'll use in future projects. Essentially, libft serves as a foundational building block for your coding journey at 42, allowing you to reuse your custom functions in later assignments.
